@@ -1,0 +1,14 @@
+{
+    "name": "user/chocolate_factory_lw5",
+    "type": "project",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "User\\ChocolateFactoryLw5\\": "src/"
+        }
+    },
+    "require": {}
+}
