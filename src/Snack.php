@@ -8,10 +8,17 @@ class Snack
     protected string $chocolate;
     protected array $topings;
 
+    public function __construct()
+    {
+        $this->name = "Простая сладость";
+        $this->chocolate = "Молочный шоколад";
+        $this->topings = [];
+    }
+
     public function prepare()
     {
-        echo "Началось создание сладости {$this->name}", PHP_EOL;
-        echo "Добавляется шоколад {$this->chocolate}", PHP_EOL;
+        echo "Началось создание сладости ", $this->name, PHP_EOL;
+        echo "Добавляется шоколад ", $this->chocolate, PHP_EOL;
         echo "Добавляются начинки: ";
         $first = true;
         foreach ($this->topings as $toping) {
