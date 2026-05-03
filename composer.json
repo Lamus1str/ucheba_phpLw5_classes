@@ -10,5 +10,9 @@
             "User\\ChocolateFactoryLw5\\": "src/"
         }
     },
-    "require": {}
+    "require": {},
+		"scripts": {
+				"phpstan": "vendor/bin/phpstan analyse src --level=8",
+				"phpcs": "vendor/bin/phpcs src --standard=PSR12"
+		}
 }
