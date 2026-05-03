@@ -6,11 +6,23 @@ class ChocolateFactory
 {
     public function orderSnack(string $type)
     {
-        $this->createSnack($type);
+            $snack = $this->createSnack($type);
+            $snack->prepare();
+            $snack->cut();
     }
 
     private function createSnack(string $type): Snack
     {
-        return new Snack("", "", []);
+        if ($type == "coconutSnack") {
+            return new CoconutSnack();
+        }
+        if ($type == "coffeeSnack") {
+            return new CoffeeSnack();
+        }
+        if ($type == "peanutSnack") {
+            return new PeanutSnack();
+        }
+
+            return new Snack();
     }
 }
