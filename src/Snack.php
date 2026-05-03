@@ -4,20 +4,13 @@ namespace User\ChocolateFactoryLw5;
 
 class Snack 
 {
-	private string $name;
-	private string $chocolate;
-	private array $topings;
-
-	public function __construct(string $name, string $chocolate, array $topings)
-	{
-		$this->name = $name;
-		$this->chocolate = $chocolate;
-		$this->topings = $topings;
-	}
+	protected string $name;
+	protected string $chocolate;
+	protected array $topings;
 
 	public function prepare()
 	{
-		echo "Началось создание сладости: {$this->name}", PHP_EOL;
+		echo "Началось создание сладости {$this->name}", PHP_EOL;
 		echo "Добавляется шоколад {$this->chocolate}", PHP_EOL;
 		echo "Добавляются начинки: ";
 		$first = true;
