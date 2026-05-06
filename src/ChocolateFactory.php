@@ -6,23 +6,16 @@ class ChocolateFactory
 {
     public function orderSnack(string $type)
     {
-            $snack = $this->createSnack($type);
-            $snack->prepare();
-            $snack->cut();
+				$snack = $this->createSnack($type);
+				$snack->prepare();
+				$snack->cut();
     }
 
-    private function createSnack(string $type): Snack
+    private function createSnack(string $className): Snack
     {
-        if ($type == "coconutSnack") {
-            return new CoconutSnack();
-        }
-        if ($type == "coffeeSnack") {
-            return new CoffeeSnack();
-        }
-        if ($type == "peanutSnack") {
-            return new PeanutSnack();
-        }
-
-            return new Snack();
+			if (is_subclass_of($className, Snack::class)) {
+				return new $className();
+			}
+			return new Snack();
     }
 }
